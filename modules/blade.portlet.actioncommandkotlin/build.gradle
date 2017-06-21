@@ -1,0 +1,26 @@
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+	}
+}
+
+//apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly "com.liferay.portal:com.liferay.portal.kernel:2.0.0"
+	compileOnly "com.liferay.portal:com.liferay.util.taglib:2.0.0"
+	compileOnly "javax.portlet:portlet-api:2.0"
+	compileOnly "javax.servlet:javax.servlet-api:3.0.1"
+	compileOnly "org.jetbrains.kotlin:kotlin-osgi-bundle:${kotlinVersion}"
+	compileOnly "org.osgi:osgi.cmpn:6.0.0"
+}
