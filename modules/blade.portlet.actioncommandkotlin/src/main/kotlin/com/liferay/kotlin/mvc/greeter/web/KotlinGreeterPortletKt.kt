@@ -32,4 +32,4 @@ import org.osgi.service.component.annotations.Component
 	"javax.portlet.init-param.view-template=/view.jsp",
 	"javax.portlet.security-role-ref=power-user,user"
 ), service = arrayOf(Portlet::class))
-class KotlinGreeterPortlet : MVCPortlet()
+class KotlinGreeterPortletKt : MVCPortlet()

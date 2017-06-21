@@ -14,7 +14,6 @@
 
 package com.liferay.kotlin.mvc.greeter.web
 
-import com.liferay.portal.kernel.log.Log
 import com.liferay.portal.kernel.log.LogFactoryUtil
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCActionCommand
 import com.liferay.portal.kernel.servlet.SessionMessages
@@ -34,8 +33,9 @@ import org.osgi.service.component.annotations.Component
 	"javax.portlet.name=com_liferay_kotlin_mvc_greeter_web_KotlinGreeterPortlet",
 	"mvc.command.name=greet"
 ), service = arrayOf(MVCActionCommand::class))
-class KotlinGreeterActionCommand : MVCActionCommand {
+class KotlinGreeterActionCommandKt : MVCActionCommand {
 
+	@Override
 	@Throws(PortletException::class)
 	override fun processAction(
 		actionRequest: ActionRequest, actionResponse: ActionResponse): Boolean {
@@ -62,7 +62,7 @@ class KotlinGreeterActionCommand : MVCActionCommand {
 	companion object {
 
 		private val _log = LogFactoryUtil.getLog(
-			KotlinGreeterActionCommand::class.java)
+			KotlinGreeterActionCommandKt::class.java)
 	}
 
 }
