@@ -23,5 +23,4 @@ dependencies {
 	compileOnly "javax.servlet:javax.servlet-api:3.0.1"
 	compile "org.jetbrains.kotlin:kotlin-osgi-bundle:${kotlinVersion}"
 	compileOnly "org.osgi:osgi.cmpn:6.0.0"
-	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }

@@ -35,7 +35,6 @@ import org.osgi.service.component.annotations.Component
 ), service = arrayOf(MVCActionCommand::class))
 class KotlinGreeterActionCommandKt : MVCActionCommand {
 
-	@Override
 	@Throws(PortletException::class)
 	override fun processAction(
 		actionRequest: ActionRequest, actionResponse: ActionResponse): Boolean {
