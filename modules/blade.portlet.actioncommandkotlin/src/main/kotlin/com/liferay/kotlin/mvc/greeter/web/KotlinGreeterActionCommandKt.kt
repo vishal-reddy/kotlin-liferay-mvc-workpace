@@ -30,21 +30,21 @@ import org.osgi.service.component.annotations.Component
  * @author Liferay
  */
 @Component(immediate = true, property = arrayOf(
-	"javax.portlet.name=com_liferay_kotlin_mvc_greeter_web_KotlinGreeterPortlet",
+	"javax.portlet.name=com_liferay_kotlin_mvc_greeter_web_KotlinGreeterPortletKt",
 	"mvc.command.name=greet"
 ), service = arrayOf(MVCActionCommand::class))
 class KotlinGreeterActionCommandKt : MVCActionCommand {
 
 	@Throws(PortletException::class)
 	override fun processAction(
-		actionRequest: ActionRequest, actionResponse: ActionResponse): Boolean {
+		actionRequest: ActionRequest?, actionResponse: ActionResponse?): Boolean {
 
 		_handleActionCommand(actionRequest)
 
 		return true
 	}
 
-	private fun _handleActionCommand(actionRequest: ActionRequest) {
+	private fun _handleActionCommand(actionRequest: ActionRequest?) {
 		val name = ParamUtil.get(actionRequest, "name", StringPool.BLANK)
 
 		if (_log.isInfoEnabled()) {
@@ -53,7 +53,7 @@ class KotlinGreeterActionCommandKt : MVCActionCommand {
 
 		val greetingMessage = "Hello $name! Welcome to OSGi"
 
-		actionRequest.setAttribute("GREETER_MESSAGE", greetingMessage)
+		actionRequest?.setAttribute("GREETER_MESSAGE", greetingMessage)
 
 		SessionMessages.add(actionRequest, "greetingMessage", greetingMessage)
 	}
